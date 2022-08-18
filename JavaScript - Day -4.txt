@@ -1,0 +1,1334 @@
+//1. comparing Two json  have the same properties without order
+
+// By Creating an new variable we can compare two json 
+ Source Code : 
+
+// a.
+var obj1 = {
+    name: "Person 1",
+    age: 5
+};
+console.log(obj1)
+console.log(JSON.stringify(obj1))
+
+// b.
+var obj2 = {
+    age: 5,
+    name: "Person 1"
+
+};
+console.log(obj2)
+console.log(JSON.stringify(obj2))
+var obj3 = obj1 === obj2;
+console.log(obj3)
+
+output : 
+
+{name: 'Person 1', age: 5}age: 5name: "Person 1"[[Prototype]]: Object
+xml.js:11 {"name":"Person 1","age":5} -> JSON FORMAT
+xml.js:19 {age: 5, name: 'Person 1'}age: 5name: "Person 1"[[Prototype]]: Object
+xml.js:20 {"age":5,"name":"Person 1"} - > JSON FORMAT
+xml.js:22 false
+
+//2. 
+
+Source code: 
+
+// XML-HttpRequest
+const xhr = new XMLHttpRequest();
+
+xhr.open("GET", "https://restcountries.com/v3.1/all") /* opening data that we need from server */
+xhr.send(); /* Sending to browser That data */
+
+xhr.responseType = "json" /* Data type */
+
+xhr.onload = function displayResult() {
+    const countries = xhr.response;
+    console.log(countries)
+    console.log(countries.length)
+    for (i = 0; i < countries.length; i++) {
+        console.log(countries[i].flags)
+    }
+}
+
+Output : 
+
+{png: 'https://flagcdn.com/w320/kw.png', svg: 'https://flagcdn.com/kw.svg'}png: "https://flagcdn.com/w320/kw.png"svg: "https://flagcdn.com/kw.svg"[[Prototype]]: Object
+xml.js:88 {png: 'https://flagcdn.com/w320/pw.png', svg: 'https://flagcdn.com/pw.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/li.png', svg: 'https://flagcdn.com/li.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/md.png', svg: 'https://flagcdn.com/md.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/ao.png', svg: 'https://flagcdn.com/ao.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/bo.png', svg: 'https://flagcdn.com/bo.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/tv.png', svg: 'https://flagcdn.com/tv.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/pe.png', svg: 'https://flagcdn.com/pe.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/nc.png', svg: 'https://flagcdn.com/nc.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/de.png', svg: 'https://flagcdn.com/de.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/bw.png', svg: 'https://flagcdn.com/bw.svg'}
+xml.js:88 {png: 'https://upload.wikimedia.org/wikipedia/commons/thu…the_Taliban.svg/320px-Flag_of_the_Taliban.svg.png', svg: 'https://upload.wikimedia.org/wikipedia/commons/5/5c/Flag_of_the_Taliban.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/hu.png', svg: 'https://flagcdn.com/hu.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/bf.png', svg: 'https://flagcdn.com/bf.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/ca.png', svg: 'https://flagcdn.com/ca.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/bl.png', svg: 'https://flagcdn.com/bl.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/id.png', svg: 'https://flagcdn.com/id.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/tw.png', svg: 'https://flagcdn.com/tw.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/lc.png', svg: 'https://flagcdn.com/lc.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/aw.png', svg: 'https://flagcdn.com/aw.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/ga.png', svg: 'https://flagcdn.com/ga.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/gs.png', svg: 'https://flagcdn.com/gs.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/lr.png', svg: 'https://flagcdn.com/lr.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/tc.png', svg: 'https://flagcdn.com/tc.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/eh.png', svg: 'https://flagcdn.com/eh.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/tr.png', svg: 'https://flagcdn.com/tr.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/ml.png', svg: 'https://flagcdn.com/ml.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/bj.png', svg: 'https://flagcdn.com/bj.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/cy.png', svg: 'https://flagcdn.com/cy.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/so.png', svg: 'https://flagcdn.com/so.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/ne.png', svg: 'https://flagcdn.com/ne.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/fo.png', svg: 'https://flagcdn.com/fo.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/pt.png', svg: 'https://flagcdn.com/pt.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/sn.png', svg: 'https://flagcdn.com/sn.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/cu.png', svg: 'https://flagcdn.com/cu.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/by.png', svg: 'https://flagcdn.com/by.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/bb.png', svg: 'https://flagcdn.com/bb.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/tn.png', svg: 'https://flagcdn.com/tn.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/il.png', svg: 'https://flagcdn.com/il.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/it.png', svg: 'https://flagcdn.com/it.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/mm.png', svg: 'https://flagcdn.com/mm.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/aq.png', svg: 'https://flagcdn.com/aq.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/fm.png', svg: 'https://flagcdn.com/fm.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/wf.png', svg: 'https://flagcdn.com/wf.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/dj.png', svg: 'https://flagcdn.com/dj.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/cg.png', svg: 'https://flagcdn.com/cg.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/gi.png', svg: 'https://flagcdn.com/gi.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/cd.png', svg: 'https://flagcdn.com/cd.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/bz.png', svg: 'https://flagcdn.com/bz.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/bm.png', svg: 'https://flagcdn.com/bm.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/au.png', svg: 'https://flagcdn.com/au.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/sh.png', svg: 'https://flagcdn.com/sh.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/cm.png', svg: 'https://flagcdn.com/cm.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/ru.png', svg: 'https://flagcdn.com/ru.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/ag.png', svg: 'https://flagcdn.com/ag.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/jp.png', svg: 'https://flagcdn.com/jp.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/ky.png', svg: 'https://flagcdn.com/ky.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/bq.png', svg: 'https://flagcdn.com/bq.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/hn.png', svg: 'https://flagcdn.com/hn.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/hm.png', svg: 'https://flagcdn.com/hm.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/bi.png', svg: 'https://flagcdn.com/bi.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/py.png', svg: 'https://flagcdn.com/py.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/ar.png', svg: 'https://flagcdn.com/ar.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/pf.png', svg: 'https://flagcdn.com/pf.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/st.png', svg: 'https://flagcdn.com/st.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/ls.png', svg: 'https://flagcdn.com/ls.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/sd.png', svg: 'https://flagcdn.com/sd.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/sv.png', svg: 'https://flagcdn.com/sv.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/cx.png', svg: 'https://flagcdn.com/cx.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/kg.png', svg: 'https://flagcdn.com/kg.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/br.png', svg: 'https://flagcdn.com/br.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/kh.png', svg: 'https://flagcdn.com/kh.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/ms.png', svg: 'https://flagcdn.com/ms.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/za.png', svg: 'https://flagcdn.com/za.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/gt.png', svg: 'https://flagcdn.com/gt.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/us.png', svg: 'https://flagcdn.com/us.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/az.png', svg: 'https://flagcdn.com/az.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/my.png', svg: 'https://flagcdn.com/my.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/co.png', svg: 'https://flagcdn.com/co.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/mr.png', svg: 'https://flagcdn.com/mr.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/bh.png', svg: 'https://flagcdn.com/bh.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/be.png', svg: 'https://flagcdn.com/be.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/cl.png', svg: 'https://flagcdn.com/cl.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/mk.png', svg: 'https://flagcdn.com/mk.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/mz.png', svg: 'https://flagcdn.com/mz.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/nf.png', svg: 'https://flagcdn.com/nf.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/as.png', svg: 'https://flagcdn.com/as.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/et.png', svg: 'https://flagcdn.com/et.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/gp.png', svg: 'https://flagcdn.com/gp.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/gu.png', svg: 'https://flagcdn.com/gu.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/in.png', svg: 'https://flagcdn.com/in.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/pr.png', svg: 'https://flagcdn.com/pr.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/es.png', svg: 'https://flagcdn.com/es.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/kz.png', svg: 'https://flagcdn.com/kz.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/om.png', svg: 'https://flagcdn.com/om.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/ae.png', svg: 'https://flagcdn.com/ae.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/pl.png', svg: 'https://flagcdn.com/pl.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/gf.png', svg: 'https://flagcdn.com/gf.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/gd.png', svg: 'https://flagcdn.com/gd.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/lk.png', svg: 'https://flagcdn.com/lk.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/tj.png', svg: 'https://flagcdn.com/tj.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/sy.png', svg: 'https://flagcdn.com/sy.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/ly.png', svg: 'https://flagcdn.com/ly.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/ht.png', svg: 'https://flagcdn.com/ht.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/sm.png', svg: 'https://flagcdn.com/sm.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/to.png', svg: 'https://flagcdn.com/to.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/vg.png', svg: 'https://flagcdn.com/vg.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/ge.png', svg: 'https://flagcdn.com/ge.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/er.png', svg: 'https://flagcdn.com/er.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/tz.png', svg: 'https://flagcdn.com/tz.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/cz.png', svg: 'https://flagcdn.com/cz.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/xk.png', svg: 'https://flagcdn.com/xk.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/bt.png', svg: 'https://flagcdn.com/bt.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/eg.png', svg: 'https://flagcdn.com/eg.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/kn.png', svg: 'https://flagcdn.com/kn.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/vn.png', svg: 'https://flagcdn.com/vn.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/mh.png', svg: 'https://flagcdn.com/mh.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/at.png', svg: 'https://flagcdn.com/at.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/pg.png', svg: 'https://flagcdn.com/pg.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/bs.png', svg: 'https://flagcdn.com/bs.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/hr.png', svg: 'https://flagcdn.com/hr.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/si.png', svg: 'https://flagcdn.com/si.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/uz.png', svg: 'https://flagcdn.com/uz.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/fi.png', svg: 'https://flagcdn.com/fi.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/gy.png', svg: 'https://flagcdn.com/gy.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/ax.png', svg: 'https://flagcdn.com/ax.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/mc.png', svg: 'https://flagcdn.com/mc.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/sk.png', svg: 'https://flagcdn.com/sk.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/ye.png', svg: 'https://flagcdn.com/ye.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/mw.png', svg: 'https://flagcdn.com/mw.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/gm.png', svg: 'https://flagcdn.com/gm.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/pa.png', svg: 'https://flagcdn.com/pa.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/im.png', svg: 'https://flagcdn.com/im.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/ie.png', svg: 'https://flagcdn.com/ie.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/kr.png', svg: 'https://flagcdn.com/kr.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/gr.png', svg: 'https://flagcdn.com/gr.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/gg.png', svg: 'https://flagcdn.com/gg.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/pk.png', svg: 'https://flagcdn.com/pk.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/pn.png', svg: 'https://flagcdn.com/pn.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/am.png', svg: 'https://flagcdn.com/am.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/mt.png', svg: 'https://flagcdn.com/mt.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/tm.png', svg: 'https://flagcdn.com/tm.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/do.png', svg: 'https://flagcdn.com/do.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/sb.png', svg: 'https://flagcdn.com/sb.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/vu.png', svg: 'https://flagcdn.com/vu.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/mg.png', svg: 'https://flagcdn.com/mg.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/la.png', svg: 'https://flagcdn.com/la.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/ck.png', svg: 'https://flagcdn.com/ck.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/mf.png', svg: 'https://flagcdn.com/mf.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/mn.png', svg: 'https://flagcdn.com/mn.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/mq.png', svg: 'https://flagcdn.com/mq.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/fr.png', svg: 'https://flagcdn.com/fr.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/cf.png', svg: 'https://flagcdn.com/cf.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/ai.png', svg: 'https://flagcdn.com/ai.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/sz.png', svg: 'https://flagcdn.com/sz.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/gb.png', svg: 'https://flagcdn.com/gb.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/is.png', svg: 'https://flagcdn.com/is.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/np.png', svg: 'https://flagcdn.com/np.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/gh.png', svg: 'https://flagcdn.com/gh.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/iq.png', svg: 'https://flagcdn.com/iq.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/th.png', svg: 'https://flagcdn.com/th.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/dk.png', svg: 'https://flagcdn.com/dk.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/rs.png', svg: 'https://flagcdn.com/rs.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/ug.png', svg: 'https://flagcdn.com/ug.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/cc.png', svg: 'https://flagcdn.com/cc.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/me.png', svg: 'https://flagcdn.com/me.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/sa.png', svg: 'https://flagcdn.com/sa.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/jo.png', svg: 'https://flagcdn.com/jo.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/sr.png', svg: 'https://flagcdn.com/sr.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/nz.png', svg: 'https://flagcdn.com/nz.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/ke.png', svg: 'https://flagcdn.com/ke.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/mx.png', svg: 'https://flagcdn.com/mx.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/ba.png', svg: 'https://flagcdn.com/ba.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/vc.png', svg: 'https://flagcdn.com/vc.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/sc.png', svg: 'https://flagcdn.com/sc.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/pm.png', svg: 'https://flagcdn.com/pm.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/tk.png', svg: 'https://flagcdn.com/tk.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/bg.png', svg: 'https://flagcdn.com/bg.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/fk.png', svg: 'https://flagcdn.com/fk.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/lv.png', svg: 'https://flagcdn.com/lv.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/re.png', svg: 'https://flagcdn.com/re.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/gn.png', svg: 'https://flagcdn.com/gn.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/lb.png', svg: 'https://flagcdn.com/lb.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/lu.png', svg: 'https://flagcdn.com/lu.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/mu.png', svg: 'https://flagcdn.com/mu.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/ee.png', svg: 'https://flagcdn.com/ee.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/no.png', svg: 'https://flagcdn.com/no.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/km.png', svg: 'https://flagcdn.com/km.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/ve.png', svg: 'https://flagcdn.com/ve.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/ir.png', svg: 'https://flagcdn.com/ir.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/se.png', svg: 'https://flagcdn.com/se.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/fj.png', svg: 'https://flagcdn.com/fj.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/ph.png', svg: 'https://flagcdn.com/ph.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/hk.png', svg: 'https://flagcdn.com/hk.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/uy.png', svg: 'https://flagcdn.com/uy.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/mo.png', svg: 'https://flagcdn.com/mo.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/ch.png', svg: 'https://flagcdn.com/ch.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/tt.png', svg: 'https://flagcdn.com/tt.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/rw.png', svg: 'https://flagcdn.com/rw.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/al.png', svg: 'https://flagcdn.com/al.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/gw.png', svg: 'https://flagcdn.com/gw.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/ci.png', svg: 'https://flagcdn.com/ci.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/kp.png', svg: 'https://flagcdn.com/kp.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/bv.png', svg: 'https://flagcdn.com/bv.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/ad.png', svg: 'https://flagcdn.com/ad.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/mv.png', svg: 'https://flagcdn.com/mv.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/nr.png', svg: 'https://flagcdn.com/nr.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/sg.png', svg: 'https://flagcdn.com/sg.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/zw.png', svg: 'https://flagcdn.com/zw.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/vi.png', svg: 'https://flagcdn.com/vi.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/dm.png', svg: 'https://flagcdn.com/dm.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/ma.png', svg: 'https://flagcdn.com/ma.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/yt.png', svg: 'https://flagcdn.com/yt.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/qa.png', svg: 'https://flagcdn.com/qa.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/sx.png', svg: 'https://flagcdn.com/sx.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/cr.png', svg: 'https://flagcdn.com/cr.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/nu.png', svg: 'https://flagcdn.com/nu.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/cw.png', svg: 'https://flagcdn.com/cw.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/cv.png', svg: 'https://flagcdn.com/cv.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/nl.png', svg: 'https://flagcdn.com/nl.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/ro.png', svg: 'https://flagcdn.com/ro.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/sl.png', svg: 'https://flagcdn.com/sl.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/ni.png', svg: 'https://flagcdn.com/ni.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/dz.png', svg: 'https://flagcdn.com/dz.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/jm.png', svg: 'https://flagcdn.com/jm.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/tg.png', svg: 'https://flagcdn.com/tg.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/va.png', svg: 'https://flagcdn.com/va.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/je.png', svg: 'https://flagcdn.com/je.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/ec.png', svg: 'https://flagcdn.com/ec.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/ws.png', svg: 'https://flagcdn.com/ws.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/io.png', svg: 'https://flagcdn.com/io.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/ng.png', svg: 'https://flagcdn.com/ng.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/zm.png', svg: 'https://flagcdn.com/zm.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/tf.png', svg: 'https://flagcdn.com/tf.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/td.png', svg: 'https://flagcdn.com/td.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/sj.png', svg: 'https://flagcdn.com/sj.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/lt.png', svg: 'https://flagcdn.com/lt.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/ua.png', svg: 'https://flagcdn.com/ua.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/cn.png', svg: 'https://flagcdn.com/cn.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/um.png', svg: 'https://flagcdn.com/um.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/mp.png', svg: 'https://flagcdn.com/mp.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/ps.png', svg: 'https://flagcdn.com/ps.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/gl.png', svg: 'https://flagcdn.com/gl.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/ss.png', svg: 'https://flagcdn.com/ss.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/bd.png', svg: 'https://flagcdn.com/bd.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/gq.png', svg: 'https://flagcdn.com/gq.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/na.png', svg: 'https://flagcdn.com/na.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/tl.png', svg: 'https://flagcdn.com/tl.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/bn.png', svg: 'https://flagcdn.com/bn.svg'}
+xml.js:88 {png: 'https://flagcdn.com/w320/ki.png', svg: 'https://flagcdn.com/ki.svg'}
+
+3. 
+Sorce code: 
+
+// XML-HttpRequest
+const xhr = new XMLHttpRequest();
+
+xhr.open("GET", "https://restcountries.com/v3.1/all") /* opening data that we need from server */
+xhr.send(); /* Sending to browser That data */
+
+xhr.responseType = "json" /* Data type */
+
+xhr.onload = function displayResult() {
+    const countries = xhr.response;
+    console.log(countries)
+    console.log(countries.length)
+    for (i = 0; i < countries.length; i++) {
+        console.log(parseInt(i) + 1, "The name is: ", countries[i].name.common)
+        console.log("the region is:", countries[i].region)
+        console.log("The Sub region is: ", countries[i].subregion)
+        console.log("The  populations are: ", countries[i].population)
+    }
+}
+
+output:
+
+250
+xml.js:88 1 'The name is: ' 'Kuwait'
+xml.js:89 the region is: Asia
+xml.js:90 The Sub region is:  Western Asia
+xml.js:91 The  populations are:  4270563
+xml.js:88 2 'The name is: ' 'Palau'
+xml.js:89 the region is: Oceania
+xml.js:90 The Sub region is:  Micronesia
+xml.js:91 The  populations are:  18092
+xml.js:88 3 'The name is: ' 'Liechtenstein'
+xml.js:89 the region is: Europe
+xml.js:90 The Sub region is:  Western Europe
+xml.js:91 The  populations are:  38137
+xml.js:88 4 'The name is: ' 'Moldova'
+xml.js:89 the region is: Europe
+xml.js:90 The Sub region is:  Eastern Europe
+xml.js:91 The  populations are:  2617820
+xml.js:88 5 'The name is: ' 'Angola'
+xml.js:89 the region is: Africa
+xml.js:90 The Sub region is:  Middle Africa
+xml.js:91 The  populations are:  32866268
+xml.js:88 6 'The name is: ' 'Bolivia'
+xml.js:89 the region is: Americas
+xml.js:90 The Sub region is:  South America
+xml.js:91 The  populations are:  11673029
+xml.js:88 7 'The name is: ' 'Tuvalu'
+xml.js:89 the region is: Oceania
+xml.js:90 The Sub region is:  Polynesia
+xml.js:91 The  populations are:  11792
+xml.js:88 8 'The name is: ' 'Peru'
+xml.js:89 the region is: Americas
+xml.js:90 The Sub region is:  South America
+xml.js:91 The  populations are:  32971846
+xml.js:88 9 'The name is: ' 'New Caledonia'
+xml.js:89 the region is: Oceania
+xml.js:90 The Sub region is:  Melanesia
+xml.js:91 The  populations are:  271960
+xml.js:88 10 'The name is: ' 'Germany'
+xml.js:89 the region is: Europe
+xml.js:90 The Sub region is:  Western Europe
+xml.js:91 The  populations are:  83240525
+xml.js:88 11 'The name is: ' 'Botswana'
+xml.js:89 the region is: Africa
+xml.js:90 The Sub region is:  Southern Africa
+xml.js:91 The  populations are:  2351625
+xml.js:88 12 'The name is: ' 'Afghanistan'
+xml.js:89 the region is: Asia
+xml.js:90 The Sub region is:  Southern Asia
+xml.js:91 The  populations are:  40218234
+xml.js:88 13 'The name is: ' 'Hungary'
+xml.js:89 the region is: Europe
+xml.js:90 The Sub region is:  Central Europe
+xml.js:91 The  populations are:  9749763
+xml.js:88 14 'The name is: ' 'Burkina Faso'
+xml.js:89 the region is: Africa
+xml.js:90 The Sub region is:  Western Africa
+xml.js:91 The  populations are:  20903278
+xml.js:88 15 'The name is: ' 'Canada'
+xml.js:89 the region is: Americas
+xml.js:90 The Sub region is:  North America
+xml.js:91 The  populations are:  38005238
+xml.js:88 16 'The name is: ' 'Saint Barthélemy'
+xml.js:89 the region is: Americas
+xml.js:90 The Sub region is:  Caribbean
+xml.js:91 The  populations are:  4255
+xml.js:88 17 'The name is: ' 'Indonesia'
+xml.js:89 the region is: Asia
+xml.js:90 The Sub region is:  South-Eastern Asia
+xml.js:91 The  populations are:  273523621
+xml.js:88 18 'The name is: ' 'Taiwan'
+xml.js:89 the region is: Asia
+xml.js:90 The Sub region is:  Eastern Asia
+xml.js:91 The  populations are:  23503349
+xml.js:88 19 'The name is: ' 'Saint Lucia'
+xml.js:89 the region is: Americas
+xml.js:90 The Sub region is:  Caribbean
+xml.js:91 The  populations are:  183629
+xml.js:88 20 'The name is: ' 'Aruba'
+xml.js:89 the region is: Americas
+xml.js:90 The Sub region is:  Caribbean
+xml.js:91 The  populations are:  106766
+xml.js:88 21 'The name is: ' 'Gabon'
+xml.js:89 the region is: Africa
+xml.js:90 The Sub region is:  Middle Africa
+xml.js:91 The  populations are:  2225728
+xml.js:88 22 'The name is: ' 'South Georgia'
+xml.js:89 the region is: Antarctic
+xml.js:90 The Sub region is:  undefined
+xml.js:91 The  populations are:  30
+xml.js:88 23 'The name is: ' 'Liberia'
+xml.js:89 the region is: Africa
+xml.js:90 The Sub region is:  Western Africa
+xml.js:91 The  populations are:  5057677
+xml.js:88 24 'The name is: ' 'Turks and Caicos Islands'
+xml.js:89 the region is: Americas
+xml.js:90 The Sub region is:  Caribbean
+xml.js:91 The  populations are:  38718
+xml.js:88 25 'The name is: ' 'Western Sahara'
+xml.js:89 the region is: Africa
+xml.js:90 The Sub region is:  Northern Africa
+xml.js:91 The  populations are:  510713
+xml.js:88 26 'The name is: ' 'Turkey'
+xml.js:89 the region is: Asia
+xml.js:90 The Sub region is:  Western Asia
+xml.js:91 The  populations are:  84339067
+xml.js:88 27 'The name is: ' 'Mali'
+xml.js:89 the region is: Africa
+xml.js:90 The Sub region is:  Western Africa
+xml.js:91 The  populations are:  20250834
+xml.js:88 28 'The name is: ' 'Benin'
+xml.js:89 the region is: Africa
+xml.js:90 The Sub region is:  Western Africa
+xml.js:91 The  populations are:  12123198
+xml.js:88 29 'The name is: ' 'Cyprus'
+xml.js:89 the region is: Europe
+xml.js:90 The Sub region is:  Southern Europe
+xml.js:91 The  populations are:  1207361
+xml.js:88 30 'The name is: ' 'Somalia'
+xml.js:89 the region is: Africa
+xml.js:90 The Sub region is:  Eastern Africa
+xml.js:91 The  populations are:  15893219
+xml.js:88 31 'The name is: ' 'Niger'
+xml.js:89 the region is: Africa
+xml.js:90 The Sub region is:  Western Africa
+xml.js:91 The  populations are:  24206636
+xml.js:88 32 'The name is: ' 'Faroe Islands'
+xml.js:89 the region is: Europe
+xml.js:90 The Sub region is:  Northern Europe
+xml.js:91 The  populations are:  48865
+xml.js:88 33 'The name is: ' 'Portugal'
+xml.js:89 the region is: Europe
+xml.js:90 The Sub region is:  Southern Europe
+xml.js:91 The  populations are:  10305564
+xml.js:88 34 'The name is: ' 'Senegal'
+xml.js:89 the region is: Africa
+xml.js:90 The Sub region is:  Western Africa
+xml.js:91 The  populations are:  16743930
+xml.js:88 35 'The name is: ' 'Cuba'
+xml.js:89 the region is: Americas
+xml.js:90 The Sub region is:  Caribbean
+xml.js:91 The  populations are:  11326616
+xml.js:88 36 'The name is: ' 'Belarus'
+xml.js:89 the region is: Europe
+xml.js:90 The Sub region is:  Eastern Europe
+xml.js:91 The  populations are:  9398861
+xml.js:88 37 'The name is: ' 'Barbados'
+xml.js:89 the region is: Americas
+xml.js:90 The Sub region is:  Caribbean
+xml.js:91 The  populations are:  287371
+xml.js:88 38 'The name is: ' 'Tunisia'
+xml.js:89 the region is: Africa
+xml.js:90 The Sub region is:  Northern Africa
+xml.js:91 The  populations are:  11818618
+xml.js:88 39 'The name is: ' 'Israel'
+xml.js:89 the region is: Asia
+xml.js:90 The Sub region is:  Western Asia
+xml.js:91 The  populations are:  9216900
+xml.js:88 40 'The name is: ' 'Italy'
+xml.js:89 the region is: Europe
+xml.js:90 The Sub region is:  Southern Europe
+xml.js:91 The  populations are:  59554023
+xml.js:88 41 'The name is: ' 'Myanmar'
+xml.js:89 the region is: Asia
+xml.js:90 The Sub region is:  South-Eastern Asia
+xml.js:91 The  populations are:  54409794
+xml.js:88 42 'The name is: ' 'Antarctica'
+xml.js:89 the region is: Antarctic
+xml.js:90 The Sub region is:  undefined
+xml.js:91 The  populations are:  1000
+xml.js:88 43 'The name is: ' 'Micronesia'
+xml.js:89 the region is: Oceania
+xml.js:90 The Sub region is:  Micronesia
+xml.js:91 The  populations are:  115021
+xml.js:88 44 'The name is: ' 'Wallis and Futuna'
+xml.js:89 the region is: Oceania
+xml.js:90 The Sub region is:  Polynesia
+xml.js:91 The  populations are:  11750
+xml.js:88 45 'The name is: ' 'Djibouti'
+xml.js:89 the region is: Africa
+xml.js:90 The Sub region is:  Eastern Africa
+xml.js:91 The  populations are:  988002
+xml.js:88 46 'The name is: ' 'Republic of the Congo'
+xml.js:89 the region is: Africa
+xml.js:90 The Sub region is:  Middle Africa
+xml.js:91 The  populations are:  5657000
+xml.js:88 47 'The name is: ' 'Gibraltar'
+xml.js:89 the region is: Europe
+xml.js:90 The Sub region is:  Southern Europe
+xml.js:91 The  populations are:  33691
+xml.js:88 48 'The name is: ' 'DR Congo'
+xml.js:89 the region is: Africa
+xml.js:90 The Sub region is:  Middle Africa
+xml.js:91 The  populations are:  108407721
+xml.js:88 49 'The name is: ' 'Belize'
+xml.js:89 the region is: Americas
+xml.js:90 The Sub region is:  Central America
+xml.js:91 The  populations are:  397621
+xml.js:88 50 'The name is: ' 'Bermuda'
+xml.js:89 the region is: Americas
+xml.js:90 The Sub region is:  North America
+xml.js:91 The  populations are:  63903
+xml.js:88 51 'The name is: ' 'Australia'
+xml.js:89 the region is: Oceania
+xml.js:90 The Sub region is:  Australia and New Zealand
+xml.js:91 The  populations are:  25687041
+xml.js:88 52 'The name is: ' 'Saint Helena, Ascension and Tristan da Cunha'
+xml.js:89 the region is: Africa
+xml.js:90 The Sub region is:  Western Africa
+xml.js:91 The  populations are:  53192
+xml.js:88 53 'The name is: ' 'Cameroon'
+xml.js:89 the region is: Africa
+xml.js:90 The Sub region is:  Middle Africa
+xml.js:91 The  populations are:  26545864
+xml.js:88 54 'The name is: ' 'Russia'
+xml.js:89 the region is: Europe
+xml.js:90 The Sub region is:  Eastern Europe
+xml.js:91 The  populations are:  144104080
+xml.js:88 55 'The name is: ' 'Antigua and Barbuda'
+xml.js:89 the region is: Americas
+xml.js:90 The Sub region is:  Caribbean
+xml.js:91 The  populations are:  97928
+xml.js:88 56 'The name is: ' 'Japan'
+xml.js:89 the region is: Asia
+xml.js:90 The Sub region is:  Eastern Asia
+xml.js:91 The  populations are:  125836021
+xml.js:88 57 'The name is: ' 'Cayman Islands'
+xml.js:89 the region is: Americas
+xml.js:90 The Sub region is:  Caribbean
+xml.js:91 The  populations are:  65720
+xml.js:88 58 'The name is: ' 'Caribbean Netherlands'
+xml.js:89 the region is: Americas
+xml.js:90 The Sub region is:  Caribbean
+xml.js:91 The  populations are:  25987
+xml.js:88 59 'The name is: ' 'Honduras'
+xml.js:89 the region is: Americas
+xml.js:90 The Sub region is:  Central America
+xml.js:91 The  populations are:  9904608
+xml.js:88 60 'The name is: ' 'Heard Island and McDonald Islands'
+xml.js:89 the region is: Antarctic
+xml.js:90 The Sub region is:  undefined
+xml.js:91 The  populations are:  0
+xml.js:88 61 'The name is: ' 'Burundi'
+xml.js:89 the region is: Africa
+xml.js:90 The Sub region is:  Eastern Africa
+xml.js:91 The  populations are:  11890781
+xml.js:88 62 'The name is: ' 'Paraguay'
+xml.js:89 the region is: Americas
+xml.js:90 The Sub region is:  South America
+xml.js:91 The  populations are:  7132530
+xml.js:88 63 'The name is: ' 'Argentina'
+xml.js:89 the region is: Americas
+xml.js:90 The Sub region is:  South America
+xml.js:91 The  populations are:  45376763
+xml.js:88 64 'The name is: ' 'French Polynesia'
+xml.js:89 the region is: Oceania
+xml.js:90 The Sub region is:  Polynesia
+xml.js:91 The  populations are:  280904
+xml.js:88 65 'The name is: ' 'São Tomé and Príncipe'
+xml.js:89 the region is: Africa
+xml.js:90 The Sub region is:  Middle Africa
+xml.js:91 The  populations are:  219161
+xml.js:88 66 'The name is: ' 'Lesotho'
+xml.js:89 the region is: Africa
+xml.js:90 The Sub region is:  Southern Africa
+xml.js:91 The  populations are:  2142252
+xml.js:88 67 'The name is: ' 'Sudan'
+xml.js:89 the region is: Africa
+xml.js:90 The Sub region is:  Northern Africa
+xml.js:91 The  populations are:  43849269
+xml.js:88 68 'The name is: ' 'El Salvador'
+xml.js:89 the region is: Americas
+xml.js:90 The Sub region is:  Central America
+xml.js:91 The  populations are:  6486201
+xml.js:88 69 'The name is: ' 'Christmas Island'
+xml.js:89 the region is: Oceania
+xml.js:90 The Sub region is:  Australia and New Zealand
+xml.js:91 The  populations are:  2072
+xml.js:88 70 'The name is: ' 'Kyrgyzstan'
+xml.js:89 the region is: Asia
+xml.js:90 The Sub region is:  Central Asia
+xml.js:91 The  populations are:  6591600
+xml.js:88 71 'The name is: ' 'Brazil'
+xml.js:89 the region is: Americas
+xml.js:90 The Sub region is:  South America
+xml.js:91 The  populations are:  212559409
+xml.js:88 72 'The name is: ' 'Cambodia'
+xml.js:89 the region is: Asia
+xml.js:90 The Sub region is:  South-Eastern Asia
+xml.js:91 The  populations are:  16718971
+xml.js:88 73 'The name is: ' 'Montserrat'
+xml.js:89 the region is: Americas
+xml.js:90 The Sub region is:  Caribbean
+xml.js:91 The  populations are:  4922
+xml.js:88 74 'The name is: ' 'South Africa'
+xml.js:89 the region is: Africa
+xml.js:90 The Sub region is:  Southern Africa
+xml.js:91 The  populations are:  59308690
+xml.js:88 75 'The name is: ' 'Guatemala'
+xml.js:89 the region is: Americas
+xml.js:90 The Sub region is:  Central America
+xml.js:91 The  populations are:  16858333
+xml.js:88 76 'The name is: ' 'United States'
+xml.js:89 the region is: Americas
+xml.js:90 The Sub region is:  North America
+xml.js:91 The  populations are:  329484123
+xml.js:88 77 'The name is: ' 'Azerbaijan'
+xml.js:89 the region is: Asia
+xml.js:90 The Sub region is:  Western Asia
+xml.js:91 The  populations are:  10110116
+xml.js:88 78 'The name is: ' 'Malaysia'
+xml.js:89 the region is: Asia
+xml.js:90 The Sub region is:  South-Eastern Asia
+xml.js:91 The  populations are:  32365998
+xml.js:88 79 'The name is: ' 'Colombia'
+xml.js:89 the region is: Americas
+xml.js:90 The Sub region is:  South America
+xml.js:91 The  populations are:  50882884
+xml.js:88 80 'The name is: ' 'Mauritania'
+xml.js:89 the region is: Africa
+xml.js:90 The Sub region is:  Western Africa
+xml.js:91 The  populations are:  4649660
+xml.js:88 81 'The name is: ' 'Bahrain'
+xml.js:89 the region is: Asia
+xml.js:90 The Sub region is:  Western Asia
+xml.js:91 The  populations are:  1701583
+xml.js:88 82 'The name is: ' 'Belgium'
+xml.js:89 the region is: Europe
+xml.js:90 The Sub region is:  Western Europe
+xml.js:91 The  populations are:  11555997
+xml.js:88 83 'The name is: ' 'Chile'
+xml.js:89 the region is: Americas
+xml.js:90 The Sub region is:  South America
+xml.js:91 The  populations are:  19116209
+xml.js:88 84 'The name is: ' 'North Macedonia'
+xml.js:89 the region is: Europe
+xml.js:90 The Sub region is:  Southeast Europe
+xml.js:91 The  populations are:  2077132
+xml.js:88 85 'The name is: ' 'Mozambique'
+xml.js:89 the region is: Africa
+xml.js:90 The Sub region is:  Eastern Africa
+xml.js:91 The  populations are:  31255435
+xml.js:88 86 'The name is: ' 'Norfolk Island'
+xml.js:89 the region is: Oceania
+xml.js:90 The Sub region is:  Australia and New Zealand
+xml.js:91 The  populations are:  2302
+xml.js:88 87 'The name is: ' 'American Samoa'
+xml.js:89 the region is: Oceania
+xml.js:90 The Sub region is:  Polynesia
+xml.js:91 The  populations are:  55197
+xml.js:88 88 'The name is: ' 'Ethiopia'
+xml.js:89 the region is: Africa
+xml.js:90 The Sub region is:  Eastern Africa
+xml.js:91 The  populations are:  114963583
+xml.js:88 89 'The name is: ' 'Guadeloupe'
+xml.js:89 the region is: Americas
+xml.js:90 The Sub region is:  Caribbean
+xml.js:91 The  populations are:  400132
+xml.js:88 90 'The name is: ' 'Guam'
+xml.js:89 the region is: Oceania
+xml.js:90 The Sub region is:  Micronesia
+xml.js:91 The  populations are:  168783
+xml.js:88 91 'The name is: ' 'India'
+xml.js:89 the region is: Asia
+xml.js:90 The Sub region is:  Southern Asia
+xml.js:91 The  populations are:  1380004385
+xml.js:88 92 'The name is: ' 'Puerto Rico'
+xml.js:89 the region is: Americas
+xml.js:90 The Sub region is:  Caribbean
+xml.js:91 The  populations are:  3194034
+xml.js:88 93 'The name is: ' 'Spain'
+xml.js:89 the region is: Europe
+xml.js:90 The Sub region is:  Southern Europe
+xml.js:91 The  populations are:  47351567
+xml.js:88 94 'The name is: ' 'Kazakhstan'
+xml.js:89 the region is: Asia
+xml.js:90 The Sub region is:  Central Asia
+xml.js:91 The  populations are:  18754440
+xml.js:88 95 'The name is: ' 'Oman'
+xml.js:89 the region is: Asia
+xml.js:90 The Sub region is:  Western Asia
+xml.js:91 The  populations are:  5106622
+xml.js:88 96 'The name is: ' 'United Arab Emirates'
+xml.js:89 the region is: Asia
+xml.js:90 The Sub region is:  Western Asia
+xml.js:91 The  populations are:  9890400
+xml.js:88 97 'The name is: ' 'Poland'
+xml.js:89 the region is: Europe
+xml.js:90 The Sub region is:  Central Europe
+xml.js:91 The  populations are:  37950802
+xml.js:88 98 'The name is: ' 'French Guiana'
+xml.js:89 the region is: Americas
+xml.js:90 The Sub region is:  South America
+xml.js:91 The  populations are:  254541
+xml.js:88 99 'The name is: ' 'Grenada'
+xml.js:89 the region is: Americas
+xml.js:90 The Sub region is:  Caribbean
+xml.js:91 The  populations are:  112519
+xml.js:88 100 'The name is: ' 'Sri Lanka'
+xml.js:89 the region is: Asia
+xml.js:90 The Sub region is:  Southern Asia
+xml.js:91 The  populations are:  21919000
+xml.js:88 101 'The name is: ' 'Tajikistan'
+xml.js:89 the region is: Asia
+xml.js:90 The Sub region is:  Central Asia
+xml.js:91 The  populations are:  9537642
+xml.js:88 102 'The name is: ' 'Syria'
+xml.js:89 the region is: Asia
+xml.js:90 The Sub region is:  Western Asia
+xml.js:91 The  populations are:  17500657
+xml.js:88 103 'The name is: ' 'Libya'
+xml.js:89 the region is: Africa
+xml.js:90 The Sub region is:  Northern Africa
+xml.js:91 The  populations are:  6871287
+xml.js:88 104 'The name is: ' 'Haiti'
+xml.js:89 the region is: Americas
+xml.js:90 The Sub region is:  Caribbean
+xml.js:91 The  populations are:  11402533
+xml.js:88 105 'The name is: ' 'San Marino'
+xml.js:89 the region is: Europe
+xml.js:90 The Sub region is:  Southern Europe
+xml.js:91 The  populations are:  33938
+xml.js:88 106 'The name is: ' 'Tonga'
+xml.js:89 the region is: Oceania
+xml.js:90 The Sub region is:  Polynesia
+xml.js:91 The  populations are:  105697
+xml.js:88 107 'The name is: ' 'British Virgin Islands'
+xml.js:89 the region is: Americas
+xml.js:90 The Sub region is:  Caribbean
+xml.js:91 The  populations are:  30237
+xml.js:88 108 'The name is: ' 'Georgia'
+xml.js:89 the region is: Asia
+xml.js:90 The Sub region is:  Western Asia
+xml.js:91 The  populations are:  3714000
+xml.js:88 109 'The name is: ' 'Eritrea'
+xml.js:89 the region is: Africa
+xml.js:90 The Sub region is:  Eastern Africa
+xml.js:91 The  populations are:  5352000
+xml.js:88 110 'The name is: ' 'Tanzania'
+xml.js:89 the region is: Africa
+xml.js:90 The Sub region is:  Eastern Africa
+xml.js:91 The  populations are:  59734213
+xml.js:88 111 'The name is: ' 'Czechia'
+xml.js:89 the region is: Europe
+xml.js:90 The Sub region is:  Central Europe
+xml.js:91 The  populations are:  10698896
+xml.js:88 112 'The name is: ' 'Kosovo'
+xml.js:89 the region is: Europe
+xml.js:90 The Sub region is:  Southeast Europe
+xml.js:91 The  populations are:  1775378
+xml.js:88 113 'The name is: ' 'Bhutan'
+xml.js:89 the region is: Asia
+xml.js:90 The Sub region is:  Southern Asia
+xml.js:91 The  populations are:  771612
+xml.js:88 114 'The name is: ' 'Egypt'
+xml.js:89 the region is: Africa
+xml.js:90 The Sub region is:  Northern Africa
+xml.js:91 The  populations are:  102334403
+xml.js:88 115 'The name is: ' 'Saint Kitts and Nevis'
+xml.js:89 the region is: Americas
+xml.js:90 The Sub region is:  Caribbean
+xml.js:91 The  populations are:  53192
+xml.js:88 116 'The name is: ' 'Vietnam'
+xml.js:89 the region is: Asia
+xml.js:90 The Sub region is:  South-Eastern Asia
+xml.js:91 The  populations are:  97338583
+xml.js:88 117 'The name is: ' 'Marshall Islands'
+xml.js:89 the region is: Oceania
+xml.js:90 The Sub region is:  Micronesia
+xml.js:91 The  populations are:  59194
+xml.js:88 118 'The name is: ' 'Austria'
+xml.js:89 the region is: Europe
+xml.js:90 The Sub region is:  Central Europe
+xml.js:91 The  populations are:  8917205
+xml.js:88 119 'The name is: ' 'Papua New Guinea'
+xml.js:89 the region is: Oceania
+xml.js:90 The Sub region is:  Melanesia
+xml.js:91 The  populations are:  8947027
+xml.js:88 120 'The name is: ' 'Bahamas'
+xml.js:89 the region is: Americas
+xml.js:90 The Sub region is:  Caribbean
+xml.js:91 The  populations are:  393248
+xml.js:88 121 'The name is: ' 'Croatia'
+xml.js:89 the region is: Europe
+xml.js:90 The Sub region is:  Southeast Europe
+xml.js:91 The  populations are:  4047200
+xml.js:88 122 'The name is: ' 'Slovenia'
+xml.js:89 the region is: Europe
+xml.js:90 The Sub region is:  Central Europe
+xml.js:91 The  populations are:  2100126
+xml.js:88 123 'The name is: ' 'Uzbekistan'
+xml.js:89 the region is: Asia
+xml.js:90 The Sub region is:  Central Asia
+xml.js:91 The  populations are:  34232050
+xml.js:88 124 'The name is: ' 'Finland'
+xml.js:89 the region is: Europe
+xml.js:90 The Sub region is:  Northern Europe
+xml.js:91 The  populations are:  5530719
+xml.js:88 125 'The name is: ' 'Guyana'
+xml.js:89 the region is: Americas
+xml.js:90 The Sub region is:  South America
+xml.js:91 The  populations are:  786559
+xml.js:88 126 'The name is: ' 'Åland Islands'
+xml.js:89 the region is: Europe
+xml.js:90 The Sub region is:  Northern Europe
+xml.js:91 The  populations are:  29458
+xml.js:88 127 'The name is: ' 'Monaco'
+xml.js:89 the region is: Europe
+xml.js:90 The Sub region is:  Western Europe
+xml.js:91 The  populations are:  39244
+xml.js:88 128 'The name is: ' 'Slovakia'
+xml.js:89 the region is: Europe
+xml.js:90 The Sub region is:  Central Europe
+xml.js:91 The  populations are:  5458827
+xml.js:88 129 'The name is: ' 'Yemen'
+xml.js:89 the region is: Asia
+xml.js:90 The Sub region is:  Western Asia
+xml.js:91 The  populations are:  29825968
+xml.js:88 130 'The name is: ' 'Malawi'
+xml.js:89 the region is: Africa
+xml.js:90 The Sub region is:  Eastern Africa
+xml.js:91 The  populations are:  19129955
+xml.js:88 131 'The name is: ' 'Gambia'
+xml.js:89 the region is: Africa
+xml.js:90 The Sub region is:  Western Africa
+xml.js:91 The  populations are:  2416664
+xml.js:88 132 'The name is: ' 'Panama'
+xml.js:89 the region is: Americas
+xml.js:90 The Sub region is:  Central America
+xml.js:91 The  populations are:  4314768
+xml.js:88 133 'The name is: ' 'Isle of Man'
+xml.js:89 the region is: Europe
+xml.js:90 The Sub region is:  Northern Europe
+xml.js:91 The  populations are:  85032
+xml.js:88 134 'The name is: ' 'Ireland'
+xml.js:89 the region is: Europe
+xml.js:90 The Sub region is:  Northern Europe
+xml.js:91 The  populations are:  4994724
+xml.js:88 135 'The name is: ' 'South Korea'
+xml.js:89 the region is: Asia
+xml.js:90 The Sub region is:  Eastern Asia
+xml.js:91 The  populations are:  51780579
+xml.js:88 136 'The name is: ' 'Greece'
+xml.js:89 the region is: Europe
+xml.js:90 The Sub region is:  Southern Europe
+xml.js:91 The  populations are:  10715549
+xml.js:88 137 'The name is: ' 'Guernsey'
+xml.js:89 the region is: Europe
+xml.js:90 The Sub region is:  Northern Europe
+xml.js:91 The  populations are:  62999
+xml.js:88 138 'The name is: ' 'Pakistan'
+xml.js:89 the region is: Asia
+xml.js:90 The Sub region is:  Southern Asia
+xml.js:91 The  populations are:  220892331
+xml.js:88 139 'The name is: ' 'Pitcairn Islands'
+xml.js:89 the region is: Oceania
+xml.js:90 The Sub region is:  Polynesia
+xml.js:91 The  populations are:  56
+xml.js:88 140 'The name is: ' 'Armenia'
+xml.js:89 the region is: Asia
+xml.js:90 The Sub region is:  Western Asia
+xml.js:91 The  populations are:  2963234
+xml.js:88 141 'The name is: ' 'Malta'
+xml.js:89 the region is: Europe
+xml.js:90 The Sub region is:  Southern Europe
+xml.js:91 The  populations are:  525285
+xml.js:88 142 'The name is: ' 'Turkmenistan'
+xml.js:89 the region is: Asia
+xml.js:90 The Sub region is:  Central Asia
+xml.js:91 The  populations are:  6031187
+xml.js:88 143 'The name is: ' 'Dominican Republic'
+xml.js:89 the region is: Americas
+xml.js:90 The Sub region is:  Caribbean
+xml.js:91 The  populations are:  10847904
+xml.js:88 144 'The name is: ' 'Solomon Islands'
+xml.js:89 the region is: Oceania
+xml.js:90 The Sub region is:  Melanesia
+xml.js:91 The  populations are:  686878
+xml.js:88 145 'The name is: ' 'Vanuatu'
+xml.js:89 the region is: Oceania
+xml.js:90 The Sub region is:  Melanesia
+xml.js:91 The  populations are:  307150
+xml.js:88 146 'The name is: ' 'Madagascar'
+xml.js:89 the region is: Africa
+xml.js:90 The Sub region is:  Eastern Africa
+xml.js:91 The  populations are:  27691019
+xml.js:88 147 'The name is: ' 'Laos'
+xml.js:89 the region is: Asia
+xml.js:90 The Sub region is:  South-Eastern Asia
+xml.js:91 The  populations are:  7275556
+xml.js:88 148 'The name is: ' 'Cook Islands'
+xml.js:89 the region is: Oceania
+xml.js:90 The Sub region is:  Polynesia
+xml.js:91 The  populations are:  18100
+xml.js:88 149 'The name is: ' 'Saint Martin'
+xml.js:89 the region is: Americas
+xml.js:90 The Sub region is:  Caribbean
+xml.js:91 The  populations are:  38659
+xml.js:88 150 'The name is: ' 'Mongolia'
+xml.js:89 the region is: Asia
+xml.js:90 The Sub region is:  Eastern Asia
+xml.js:91 The  populations are:  3278292
+xml.js:88 151 'The name is: ' 'Martinique'
+xml.js:89 the region is: Americas
+xml.js:90 The Sub region is:  Caribbean
+xml.js:91 The  populations are:  378243
+xml.js:88 152 'The name is: ' 'France'
+xml.js:89 the region is: Europe
+xml.js:90 The Sub region is:  Western Europe
+xml.js:91 The  populations are:  67391582
+xml.js:88 153 'The name is: ' 'Central African Republic'
+xml.js:89 the region is: Africa
+xml.js:90 The Sub region is:  Middle Africa
+xml.js:91 The  populations are:  4829764
+xml.js:88 154 'The name is: ' 'Anguilla'
+xml.js:89 the region is: Americas
+xml.js:90 The Sub region is:  Caribbean
+xml.js:91 The  populations are:  13452
+xml.js:88 155 'The name is: ' 'Eswatini'
+xml.js:89 the region is: Africa
+xml.js:90 The Sub region is:  Southern Africa
+xml.js:91 The  populations are:  1160164
+xml.js:88 156 'The name is: ' 'United Kingdom'
+xml.js:89 the region is: Europe
+xml.js:90 The Sub region is:  Northern Europe
+xml.js:91 The  populations are:  67215293
+xml.js:88 157 'The name is: ' 'Iceland'
+xml.js:89 the region is: Europe
+xml.js:90 The Sub region is:  Northern Europe
+xml.js:91 The  populations are:  366425
+xml.js:88 158 'The name is: ' 'Nepal'
+xml.js:89 the region is: Asia
+xml.js:90 The Sub region is:  Southern Asia
+xml.js:91 The  populations are:  29136808
+xml.js:88 159 'The name is: ' 'Ghana'
+xml.js:89 the region is: Africa
+xml.js:90 The Sub region is:  Western Africa
+xml.js:91 The  populations are:  31072945
+xml.js:88 160 'The name is: ' 'Iraq'
+xml.js:89 the region is: Asia
+xml.js:90 The Sub region is:  Western Asia
+xml.js:91 The  populations are:  40222503
+xml.js:88 161 'The name is: ' 'Thailand'
+xml.js:89 the region is: Asia
+xml.js:90 The Sub region is:  South-Eastern Asia
+xml.js:91 The  populations are:  69799978
+xml.js:88 162 'The name is: ' 'Denmark'
+xml.js:89 the region is: Europe
+xml.js:90 The Sub region is:  Northern Europe
+xml.js:91 The  populations are:  5831404
+xml.js:88 163 'The name is: ' 'Serbia'
+xml.js:89 the region is: Europe
+xml.js:90 The Sub region is:  Southeast Europe
+xml.js:91 The  populations are:  6908224
+xml.js:88 164 'The name is: ' 'Uganda'
+xml.js:89 the region is: Africa
+xml.js:90 The Sub region is:  Eastern Africa
+xml.js:91 The  populations are:  45741000
+xml.js:88 165 'The name is: ' 'Cocos (Keeling) Islands'
+xml.js:89 the region is: Oceania
+xml.js:90 The Sub region is:  Australia and New Zealand
+xml.js:91 The  populations are:  544
+xml.js:88 166 'The name is: ' 'Montenegro'
+xml.js:89 the region is: Europe
+xml.js:90 The Sub region is:  Southeast Europe
+xml.js:91 The  populations are:  621718
+xml.js:88 167 'The name is: ' 'Saudi Arabia'
+xml.js:89 the region is: Asia
+xml.js:90 The Sub region is:  Western Asia
+xml.js:91 The  populations are:  34813867
+xml.js:88 168 'The name is: ' 'Jordan'
+xml.js:89 the region is: Asia
+xml.js:90 The Sub region is:  Western Asia
+xml.js:91 The  populations are:  10203140
+xml.js:88 169 'The name is: ' 'Suriname'
+xml.js:89 the region is: Americas
+xml.js:90 The Sub region is:  South America
+xml.js:91 The  populations are:  586634
+xml.js:88 170 'The name is: ' 'New Zealand'
+xml.js:89 the region is: Oceania
+xml.js:90 The Sub region is:  Australia and New Zealand
+xml.js:91 The  populations are:  5084300
+xml.js:88 171 'The name is: ' 'Kenya'
+xml.js:89 the region is: Africa
+xml.js:90 The Sub region is:  Eastern Africa
+xml.js:91 The  populations are:  53771300
+xml.js:88 172 'The name is: ' 'Mexico'
+xml.js:89 the region is: Americas
+xml.js:90 The Sub region is:  North America
+xml.js:91 The  populations are:  128932753
+xml.js:88 173 'The name is: ' 'Bosnia and Herzegovina'
+xml.js:89 the region is: Europe
+xml.js:90 The Sub region is:  Southeast Europe
+xml.js:91 The  populations are:  3280815
+xml.js:88 174 'The name is: ' 'Saint Vincent and the Grenadines'
+xml.js:89 the region is: Americas
+xml.js:90 The Sub region is:  Caribbean
+xml.js:91 The  populations are:  110947
+xml.js:88 175 'The name is: ' 'Seychelles'
+xml.js:89 the region is: Africa
+xml.js:90 The Sub region is:  Eastern Africa
+xml.js:91 The  populations are:  98462
+xml.js:88 176 'The name is: ' 'Saint Pierre and Miquelon'
+xml.js:89 the region is: Americas
+xml.js:90 The Sub region is:  North America
+xml.js:91 The  populations are:  6069
+xml.js:88 177 'The name is: ' 'Tokelau'
+xml.js:89 the region is: Oceania
+xml.js:90 The Sub region is:  Polynesia
+xml.js:91 The  populations are:  1411
+xml.js:88 178 'The name is: ' 'Bulgaria'
+xml.js:89 the region is: Europe
+xml.js:90 The Sub region is:  Southeast Europe
+xml.js:91 The  populations are:  6927288
+xml.js:88 179 'The name is: ' 'Falkland Islands'
+xml.js:89 the region is: Americas
+xml.js:90 The Sub region is:  South America
+xml.js:91 The  populations are:  2563
+xml.js:88 180 'The name is: ' 'Latvia'
+xml.js:89 the region is: Europe
+xml.js:90 The Sub region is:  Northern Europe
+xml.js:91 The  populations are:  1901548
+xml.js:88 181 'The name is: ' 'Réunion'
+xml.js:89 the region is: Africa
+xml.js:90 The Sub region is:  Eastern Africa
+xml.js:91 The  populations are:  840974
+xml.js:88 182 'The name is: ' 'Guinea'
+xml.js:89 the region is: Africa
+xml.js:90 The Sub region is:  Western Africa
+xml.js:91 The  populations are:  13132792
+xml.js:88 183 'The name is: ' 'Lebanon'
+xml.js:89 the region is: Asia
+xml.js:90 The Sub region is:  Western Asia
+xml.js:91 The  populations are:  6825442
+xml.js:88 184 'The name is: ' 'Luxembourg'
+xml.js:89 the region is: Europe
+xml.js:90 The Sub region is:  Western Europe
+xml.js:91 The  populations are:  632275
+xml.js:88 185 'The name is: ' 'Mauritius'
+xml.js:89 the region is: Africa
+xml.js:90 The Sub region is:  Eastern Africa
+xml.js:91 The  populations are:  1265740
+xml.js:88 186 'The name is: ' 'Estonia'
+xml.js:89 the region is: Europe
+xml.js:90 The Sub region is:  Northern Europe
+xml.js:91 The  populations are:  1331057
+xml.js:88 187 'The name is: ' 'Norway'
+xml.js:89 the region is: Europe
+xml.js:90 The Sub region is:  Northern Europe
+xml.js:91 The  populations are:  5379475
+xml.js:88 188 'The name is: ' 'Comoros'
+xml.js:89 the region is: Africa
+xml.js:90 The Sub region is:  Eastern Africa
+xml.js:91 The  populations are:  869595
+xml.js:88 189 'The name is: ' 'Venezuela'
+xml.js:89 the region is: Americas
+xml.js:90 The Sub region is:  South America
+xml.js:91 The  populations are:  28435943
+xml.js:88 190 'The name is: ' 'Iran'
+xml.js:89 the region is: Asia
+xml.js:90 The Sub region is:  Southern Asia
+xml.js:91 The  populations are:  83992953
+xml.js:88 191 'The name is: ' 'Sweden'
+xml.js:89 the region is: Europe
+xml.js:90 The Sub region is:  Northern Europe
+xml.js:91 The  populations are:  10353442
+xml.js:88 192 'The name is: ' 'Fiji'
+xml.js:89 the region is: Oceania
+xml.js:90 The Sub region is:  Melanesia
+xml.js:91 The  populations are:  896444
+xml.js:88 193 'The name is: ' 'Philippines'
+xml.js:89 the region is: Asia
+xml.js:90 The Sub region is:  South-Eastern Asia
+xml.js:91 The  populations are:  109581085
+xml.js:88 194 'The name is: ' 'Hong Kong'
+xml.js:89 the region is: Asia
+xml.js:90 The Sub region is:  Eastern Asia
+xml.js:91 The  populations are:  7500700
+xml.js:88 195 'The name is: ' 'Uruguay'
+xml.js:89 the region is: Americas
+xml.js:90 The Sub region is:  South America
+xml.js:91 The  populations are:  3473727
+xml.js:88 196 'The name is: ' 'Macau'
+xml.js:89 the region is: Asia
+xml.js:90 The Sub region is:  Eastern Asia
+xml.js:91 The  populations are:  649342
+xml.js:88 197 'The name is: ' 'Switzerland'
+xml.js:89 the region is: Europe
+xml.js:90 The Sub region is:  Western Europe
+xml.js:91 The  populations are:  8654622
+xml.js:88 198 'The name is: ' 'Trinidad and Tobago'
+xml.js:89 the region is: Americas
+xml.js:90 The Sub region is:  Caribbean
+xml.js:91 The  populations are:  1399491
+xml.js:88 199 'The name is: ' 'Rwanda'
+xml.js:89 the region is: Africa
+xml.js:90 The Sub region is:  Eastern Africa
+xml.js:91 The  populations are:  12952209
+xml.js:88 200 'The name is: ' 'Albania'
+xml.js:89 the region is: Europe
+xml.js:90 The Sub region is:  Southeast Europe
+xml.js:91 The  populations are:  2837743
+xml.js:88 201 'The name is: ' 'Guinea-Bissau'
+xml.js:89 the region is: Africa
+xml.js:90 The Sub region is:  Western Africa
+xml.js:91 The  populations are:  1967998
+xml.js:88 202 'The name is: ' 'Ivory Coast'
+xml.js:89 the region is: Africa
+xml.js:90 The Sub region is:  Western Africa
+xml.js:91 The  populations are:  26378275
+xml.js:88 203 'The name is: ' 'North Korea'
+xml.js:89 the region is: Asia
+xml.js:90 The Sub region is:  Eastern Asia
+xml.js:91 The  populations are:  25778815
+xml.js:88 204 'The name is: ' 'Bouvet Island'
+xml.js:89 the region is: Antarctic
+xml.js:90 The Sub region is:  undefined
+xml.js:91 The  populations are:  0
+xml.js:88 205 'The name is: ' 'Andorra'
+xml.js:89 the region is: Europe
+xml.js:90 The Sub region is:  Southern Europe
+xml.js:91 The  populations are:  77265
+xml.js:88 206 'The name is: ' 'Maldives'
+xml.js:89 the region is: Asia
+xml.js:90 The Sub region is:  Southern Asia
+xml.js:91 The  populations are:  540542
+xml.js:88 207 'The name is: ' 'Nauru'
+xml.js:89 the region is: Oceania
+xml.js:90 The Sub region is:  Micronesia
+xml.js:91 The  populations are:  10834
+xml.js:88 208 'The name is: ' 'Singapore'
+xml.js:89 the region is: Asia
+xml.js:90 The Sub region is:  South-Eastern Asia
+xml.js:91 The  populations are:  5685807
+xml.js:88 209 'The name is: ' 'Zimbabwe'
+xml.js:89 the region is: Africa
+xml.js:90 The Sub region is:  Southern Africa
+xml.js:91 The  populations are:  14862927
+xml.js:88 210 'The name is: ' 'United States Virgin Islands'
+xml.js:89 the region is: Americas
+xml.js:90 The Sub region is:  Caribbean
+xml.js:91 The  populations are:  106290
+xml.js:88 211 'The name is: ' 'Dominica'
+xml.js:89 the region is: Americas
+xml.js:90 The Sub region is:  Caribbean
+xml.js:91 The  populations are:  71991
+xml.js:88 212 'The name is: ' 'Morocco'
+xml.js:89 the region is: Africa
+xml.js:90 The Sub region is:  Northern Africa
+xml.js:91 The  populations are:  36910558
+xml.js:88 213 'The name is: ' 'Mayotte'
+xml.js:89 the region is: Africa
+xml.js:90 The Sub region is:  Eastern Africa
+xml.js:91 The  populations are:  226915
+xml.js:88 214 'The name is: ' 'Qatar'
+xml.js:89 the region is: Asia
+xml.js:90 The Sub region is:  Western Asia
+xml.js:91 The  populations are:  2881060
+xml.js:88 215 'The name is: ' 'Sint Maarten'
+xml.js:89 the region is: Americas
+xml.js:90 The Sub region is:  Caribbean
+xml.js:91 The  populations are:  40812
+xml.js:88 216 'The name is: ' 'Costa Rica'
+xml.js:89 the region is: Americas
+xml.js:90 The Sub region is:  Central America
+xml.js:91 The  populations are:  5094114
+xml.js:88 217 'The name is: ' 'Niue'
+xml.js:89 the region is: Oceania
+xml.js:90 The Sub region is:  Polynesia
+xml.js:91 The  populations are:  1470
+xml.js:88 218 'The name is: ' 'Curaçao'
+xml.js:89 the region is: Americas
+xml.js:90 The Sub region is:  Caribbean
+xml.js:91 The  populations are:  155014
+xml.js:88 219 'The name is: ' 'Cape Verde'
+xml.js:89 the region is: Africa
+xml.js:90 The Sub region is:  Western Africa
+xml.js:91 The  populations are:  555988
+xml.js:88 220 'The name is: ' 'Netherlands'
+xml.js:89 the region is: Europe
+xml.js:90 The Sub region is:  Western Europe
+xml.js:91 The  populations are:  16655799
+xml.js:88 221 'The name is: ' 'Romania'
+xml.js:89 the region is: Europe
+xml.js:90 The Sub region is:  Southeast Europe
+xml.js:91 The  populations are:  19286123
+xml.js:88 222 'The name is: ' 'Sierra Leone'
+xml.js:89 the region is: Africa
+xml.js:90 The Sub region is:  Western Africa
+xml.js:91 The  populations are:  7976985
+xml.js:88 223 'The name is: ' 'Nicaragua'
+xml.js:89 the region is: Americas
+xml.js:90 The Sub region is:  Central America
+xml.js:91 The  populations are:  6624554
+xml.js:88 224 'The name is: ' 'Algeria'
+xml.js:89 the region is: Africa
+xml.js:90 The Sub region is:  Northern Africa
+xml.js:91 The  populations are:  44700000
+xml.js:88 225 'The name is: ' 'Jamaica'
+xml.js:89 the region is: Americas
+xml.js:90 The Sub region is:  Caribbean
+xml.js:91 The  populations are:  2961161
+xml.js:88 226 'The name is: ' 'Togo'
+xml.js:89 the region is: Africa
+xml.js:90 The Sub region is:  Western Africa
+xml.js:91 The  populations are:  8278737
+xml.js:88 227 'The name is: ' 'Vatican City'
+xml.js:89 the region is: Europe
+xml.js:90 The Sub region is:  Southern Europe
+xml.js:91 The  populations are:  451
+xml.js:88 228 'The name is: ' 'Jersey'
+xml.js:89 the region is: Europe
+xml.js:90 The Sub region is:  Northern Europe
+xml.js:91 The  populations are:  100800
+xml.js:88 229 'The name is: ' 'Ecuador'
+xml.js:89 the region is: Americas
+xml.js:90 The Sub region is:  South America
+xml.js:91 The  populations are:  17643060
+xml.js:88 230 'The name is: ' 'Samoa'
+xml.js:89 the region is: Oceania
+xml.js:90 The Sub region is:  Polynesia
+xml.js:91 The  populations are:  198410
+xml.js:88 231 'The name is: ' 'British Indian Ocean Territory'
+xml.js:89 the region is: Africa
+xml.js:90 The Sub region is:  Eastern Africa
+xml.js:91 The  populations are:  3000
+xml.js:88 232 'The name is: ' 'Nigeria'
+xml.js:89 the region is: Africa
+xml.js:90 The Sub region is:  Western Africa
+xml.js:91 The  populations are:  206139587
+xml.js:88 233 'The name is: ' 'Zambia'
+xml.js:89 the region is: Africa
+xml.js:90 The Sub region is:  Eastern Africa
+xml.js:91 The  populations are:  18383956
+xml.js:88 234 'The name is: ' 'French Southern and Antarctic Lands'
+xml.js:89 the region is: Antarctic
+xml.js:90 The Sub region is:  undefined
+xml.js:91 The  populations are:  400
+xml.js:88 235 'The name is: ' 'Chad'
+xml.js:89 the region is: Africa
+xml.js:90 The Sub region is:  Middle Africa
+xml.js:91 The  populations are:  16425859
+xml.js:88 236 'The name is: ' 'Svalbard and Jan Mayen'
+xml.js:89 the region is: Europe
+xml.js:90 The Sub region is:  Northern Europe
+xml.js:91 The  populations are:  2562
+xml.js:88 237 'The name is: ' 'Lithuania'
+xml.js:89 the region is: Europe
+xml.js:90 The Sub region is:  Northern Europe
+xml.js:91 The  populations are:  2794700
+xml.js:88 238 'The name is: ' 'Ukraine'
+xml.js:89 the region is: Europe
+xml.js:90 The Sub region is:  Eastern Europe
+xml.js:91 The  populations are:  44134693
+xml.js:88 239 'The name is: ' 'China'
+xml.js:89 the region is: Asia
+xml.js:90 The Sub region is:  Eastern Asia
+xml.js:91 The  populations are:  1402112000
+xml.js:88 240 'The name is: ' 'United States Minor Outlying Islands'
+xml.js:89 the region is: Americas
+xml.js:90 The Sub region is:  North America
+xml.js:91 The  populations are:  300
+xml.js:88 241 'The name is: ' 'Northern Mariana Islands'
+xml.js:89 the region is: Oceania
+xml.js:90 The Sub region is:  Micronesia
+xml.js:91 The  populations are:  57557
+xml.js:88 242 'The name is: ' 'Palestine'
+xml.js:89 the region is: Asia
+xml.js:90 The Sub region is:  Western Asia
+xml.js:91 The  populations are:  4803269
+xml.js:88 243 'The name is: ' 'Greenland'
+xml.js:89 the region is: Americas
+xml.js:90 The Sub region is:  North America
+xml.js:91 The  populations are:  56367
+xml.js:88 244 'The name is: ' 'South Sudan'
+xml.js:89 the region is: Africa
+xml.js:90 The Sub region is:  Middle Africa
+xml.js:91 The  populations are:  11193729
+xml.js:88 245 'The name is: ' 'Bangladesh'
+xml.js:89 the region is: Asia
+xml.js:90 The Sub region is:  Southern Asia
+xml.js:91 The  populations are:  164689383
+xml.js:88 246 'The name is: ' 'Equatorial Guinea'
+xml.js:89 the region is: Africa
+xml.js:90 The Sub region is:  Middle Africa
+xml.js:91 The  populations are:  1402985
+xml.js:88 247 'The name is: ' 'Namibia'
+xml.js:89 the region is: Africa
+xml.js:90 The Sub region is:  Southern Africa
+xml.js:91 The  populations are:  2540916
+xml.js:88 248 'The name is: ' 'Timor-Leste'
+xml.js:89 the region is: Asia
+xml.js:90 The Sub region is:  South-Eastern Asia
+xml.js:91 The  populations are:  1318442
+xml.js:88 249 'The name is: ' 'Brunei'
+xml.js:89 the region is: Asia
+xml.js:90 The Sub region is:  South-Eastern Asia
+xml.js:91 The  populations are:  437483
+xml.js:88 250 'The name is: ' 'Kiribati'
+xml.js:89 the region is: Oceania
+xml.js:90 The Sub region is:  Micronesia
+xml.js:91 The  populations are:  119446
+
+
